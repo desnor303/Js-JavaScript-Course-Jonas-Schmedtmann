@@ -20,44 +20,15 @@ let UIstyle = (backgroundColorIndex, remNumber) => {
 };
 
 // set score !
-scoreAssgin();
-
-// displayMessage
-const displayMessage = mess => {
-  document.querySelector('.message').textContent = mess;
-};
-
-// make ramdom
-let random = Math.floor(Math.random() * 20) + 1;
-// check Button !
-const checkBtn = function () {
-  // make guess
-  let guess = Number(document.querySelector('.guess').value);
-  // Logic !
-  // Number ?
-  if (!guess) {
-    displayMessage('Please assign a Number to begin!');
-  }
-  // not correct ?
-  else if (guess !== random) {
-    if (score <= 0) {
-      displayMessage('You Lose! 💥');
-      UIstyle('#732237', 30);
-    } else {
-      score -= 1;
-      guess > random
-        ? displayMessage('Too High!! 📉')
-        : displayMessage('Too Low!! 📈');
-    }
-  }
-  // correct ?
-  else if (guess === random) {
-    displayMessage('🎉 Correct Number!');
-    UIstyle('#60b347', 30);
-
-    // save highscore
-    document.querySelector('.highscore').textContent = score;
-  }
+let score = 0;
+document.querySelector('.score').textContent = score;
+// get ".guess"
+document.querySelector('.guess').value;
+// clickEvent
+document.querySelector('.check').addEventListener('click', function () {
+  // set ".number"
+  const random = Math.floor(Math.random() * 20) + 1;
+  document.querySelector('.number').textContent = random;
 
   // update score
   document.querySelector('.score').textContent = score;
