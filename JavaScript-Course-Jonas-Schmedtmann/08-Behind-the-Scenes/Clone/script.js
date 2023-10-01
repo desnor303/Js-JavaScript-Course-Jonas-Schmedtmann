@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 /*
 // Variable
 
@@ -12,6 +12,7 @@ const year = 1996;
 
 // Function
 */
+/*
 // This keyword
 console.log(this);
 
@@ -53,3 +54,35 @@ const BaoYen = {
 
 BaoYen.birthDay = getBirth;
 console.log(BaoYen.birthDay());
+
+*/
+
+const dat = {
+  firstName: 'Dat',
+  birthYear: 1996,
+  money: 1000000,
+  birthDay: function () {
+    //   các cách để truyền "this" vào trong regular function
+    /*
+    // method 1
+    const self = this;
+    function isYounger() {
+      console.log(self.birthYear < 1995);
+    }
+    // method 2
+    isYounger = () => {
+      console.log(this.birthYear < 1995);
+    };
+*/
+    isYounger();
+    return `${this.firstName}'s birthDay is ${this.birthYear}`;
+  },
+
+  //   don't use arrow function to create Obj method
+  great: () => {
+    console.log(`hey, ${this.firstName}`);
+  },
+};
+
+// dat.great();
+dat.birthDay();
