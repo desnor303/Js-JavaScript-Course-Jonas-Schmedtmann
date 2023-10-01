@@ -56,25 +56,27 @@ BaoYen.birthDay = getBirth;
 console.log(BaoYen.birthDay());
 
 */
-
+/*
 const dat = {
   firstName: 'Dat',
   birthYear: 1996,
   money: 1000000,
   birthDay: function () {
     //   các cách để truyền "this" vào trong regular function
-    /*
-    // method 1
-    const self = this;
-    function isYounger() {
-      console.log(self.birthYear < 1995);
-    }
-    // method 2
-    isYounger = () => {
-      console.log(this.birthYear < 1995);
-    };
-*/
-    isYounger();
+
+    // // method 1
+
+    // const self = this;
+    // function isYounger() {
+    //   console.log(self.birthYear < 1995);
+    // }
+    // // method 2
+    // isYounger = () => {
+    //   console.log(this.birthYear < 1995);
+    // };
+
+    // isYounger();
+
     return `${this.firstName}'s birthDay is ${this.birthYear}`;
   },
 
@@ -86,3 +88,32 @@ const dat = {
 
 // dat.great();
 dat.birthDay();
+
+*/
+
+// Primitive types
+let lastName = 'Ha';
+let oldLastName = lastName;
+lastName = 'Huynh';
+console.log(lastName, oldLastName);
+
+// Object reference types
+const BaoYen = {
+  firstName: 'Yến',
+  lastName: 'Huỳnh',
+  age: '28',
+};
+
+const marriedBaoYen = BaoYen;
+marriedBaoYen.lastName = 'Ha';
+console.log(BaoYen);
+console.log(marriedBaoYen);
+
+// Copy Object ( just a shallow copy)
+const BaoYen2 = {
+  firstName: 'Yến',
+  lastName: 'Huỳnh',
+  age: '28',
+};
+const BaoYenCopy = Object.assign({}, BaoYen2);
+console.log(BaoYenCopy);
