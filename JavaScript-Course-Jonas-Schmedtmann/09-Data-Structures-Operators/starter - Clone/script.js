@@ -194,7 +194,7 @@ console.log(sum(2, 4));
 console.log(sum(...arr1));
 */
 //todo Nullish Coalescing Operator
-
+/*
 let input;
 let caution = function () {
   return console.log(`He has gain ${input}`);
@@ -202,3 +202,42 @@ let caution = function () {
 caution();
 input = 'fail';
 caution();
+*/
+//todo  logical assignment operators
+
+const rest1 = {
+  name: 'BaoYen',
+  // numGuest: 25,
+  numGuest: 0,
+};
+
+const rest2 = {
+  name: 'TienDat',
+  owner: 'DatHa',
+};
+
+//? the old ways
+/*
+rest1.numGuest = rest1.numGuest || 10;
+rest2.numGuest = rest2.numGuest || 10;
+console.log(rest1, rest2); 
+*/
+//? OR assignment operators" Giá trị mặc đinh được kích hoạt khi g trị ban đầu là Falsy
+/**/
+/*
+rest1.numGuest ||= 10;
+rest2.numGuest ||= 10;
+console.log(rest1, rest2);
+*/
+
+//? Nullish assignment operators" (null or undefined) Giá trị mặc đinh được kích hoạt khi g trị ban đầu là (null or undefined)
+/*
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+console.log(rest1, rest2);
+*/
+
+//? Nullish assignment operators" (null or undefined) Giá trị mặc đinh được kích hoạt khi g trị ban đầu là (null or undefined)
+rest1.owner &&= 'anonymous';
+rest2.owner &&= 'anonymous';
+console.log(rest1, rest2);
