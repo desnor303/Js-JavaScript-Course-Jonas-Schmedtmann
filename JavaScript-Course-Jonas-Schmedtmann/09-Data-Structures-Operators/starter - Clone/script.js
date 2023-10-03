@@ -45,6 +45,71 @@ const restaurant = {
   },
 };
 
+//TODO ** Destructoring **
+//? Basic
+/*
+const array = [1, 2, 3];
+let [a, b, c] = array;
+console.log(a, b, c);
+[a, b] = [b, a];
+console.log(a, b);
+*/
+
+//? Receive 2 value from a function
+/*
+let [starterMenu, mainMenu] = restaurant.order(2, 1);
+console.log(starterMenu, mainMenu);
+*/
+//?/ Nested destructuring
+
+/*
+let arr2 = [1, 2, [5, 6]];
+let [i, , [k, l]] = arr2;
+console.log(k, l);
+*/
+
+//? Default value
+/*
+const [p, q, r = 3] = [1, 2, 3];
+console.log(p, q, r);
+
+*/
+// todo ** destructoring Object **
+
+//? basic
+/*
+const { name, mainMenu, openingHours } = restaurant;
+console.log(name, mainMenu, openingHours);
+*/
+//?  Name the variable  destructoring Object, with give the default value
+/*
+const {
+  name: restaurantName = [],
+  Menu: Menu = [], // dont have Menu pros in restaurant, then Menu = []
+  openingHours: Time = [],
+} = restaurant;
+console.log(restaurantName, Menu, Time);
+*/
+//? mutation Variable
+/*
+let a = 5;
+let b = 50;
+let obj = {
+  a: 11,
+  b: 22,
+};
+
+({ a, b } = obj); //! we neen branket, because not - Js will think {} is a block then make error notification
+console.log(a, b);
+*/
+//? Nested Obj
+/*
+let {
+  sat: { open: o = 8, close: c = 20 },
+} = openingHours;
+console.log(o, c);
+*/
+//*real world example
 /*
 restaurant.orderDeliver({
   time: '8:40',
@@ -56,63 +121,11 @@ restaurant.orderDeliver({
 restaurant.orderDeliver({
   address: '191 Le Van Si',
 });
-//TODO ** Destructoring **
-//? Basic
-// const array = [1, 2, 3];
-// let [a, b, c] = array;
-// console.log(a, b, c);
-
-// [a, b] = [b, a];
-// console.log(a, b);
-
-//? Receive 2 value from a function
-// let [starterMenu, mainMenu] = restaurant.order(2, 1);
-// console.log(starterMenu, mainMenu);
-
-//?/ Nested destructuring
-// let arr2 = [1, 2, [5, 6]];
-// let [i, , [k, l]] = arr2;
-// console.log(k, l);
-
-//? Default value
-// const [p, q, r = 3] = [1, 2, 3];
-// console.log(p, q, r);
-/*
-//todo ** destructoring Object **
-
-//? basic
-const { name, mainMenu, openingHours } = restaurant;
-console.log(name, mainMenu, openingHours);
-
-//?  Name the variable  destructoring Object, with give the default value
-const {
-  name: restaurantName = [],
-  Menu: Menu = [], // dont have Menu pros in restaurant, then Menu = []
-  openingHours: Time = [],
-} = restaurant;
-console.log(restaurantName, Menu, Time);
-
-//? mutation Variable
-let a = 5;
-let b = 50;
-let obj = {
-  a: 11,
-  b: 22,
-};
-
-({ a, b } = obj); //! we neen branket, because not - Js will think {} is a block then make error notification
-console.log(a, b);
-
-//? Nested Obj
-let {
-  sat: { open: o = 8, close: c = 20 },
-} = openingHours;
-console.log(o, c);
 */
 /////////////////////////////////////
 //todo Spread opereator
 /*
-//? use Spread opereator for create an arr
+? use Spread opereator for create an arr
 let arr = [1, 2, 3];
 let arr2 = [...arr, 4, 5];
 console.log(arr2);
@@ -121,9 +134,11 @@ let myLovestr = [...str, 'is', 'my only love'];
 console.log(myLovestr);
 
 */
-// ! **"error"**  keep in mind that we can still only use the spread operator when building an array, or when we pass values into a function.
+/* 
+! **"error"**  keep in mind that we can still only use the spread operator when building an array,
+! or when we pass values into a function.
 //console.log(`${...str} is my only love`)
-
+*/
 /*
 //*real world example
 const promtOrder = [
@@ -134,7 +149,43 @@ const promtOrder = [
 restaurant.makePizzaBuffet(...promtOrder);
 */
 
+//? Make a shalow clone by using spread operator
+/*
 const newrestaurant = { ...restaurant };
 newrestaurant.mainMenu.push('rice');
 console.log(newrestaurant);
 console.log(restaurant);
+*/
+///////////////////////////
+// todo "Rest operator"
+//? Basic
+/*
+const arr = [1, 2, 3];
+REST, because the left side of =
+const [first, ...rest] = arr;
+console.log(arr);
+console.log(rest);
+console.log(typeof first);
+*/
+//? Rest operator for Array
+/*
+
+const [first, , third, ...others] = [
+  ...restaurant.starterMenu,
+  ...restaurant.mainMenu,
+];
+console.log(first);
+console.log(third);
+console.log(others);
+*/
+//? Rest operator for Object
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat);
+console.log(weekdays);
+// 2) Function
+const sum = function (...numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+};
+let arr1 = [1, 3, 5];
+console.log(sum(2, 4));
+console.log(sum(...arr1));
