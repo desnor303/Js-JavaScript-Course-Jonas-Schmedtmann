@@ -341,7 +341,58 @@ team2 < team1 && console.log('team 2 win');
 
 //todo Looping Arrays: The for-of Loop
 
+/*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (let item of menu) console.log(`this ${item} is very delicious`);
 console.log(...menu.entries());
 for (let [index, ele] of menu.entries()) console.log(`${index + 1}: ${ele}`);
+*/
+
+//todo ES6 Enhanced Object Literals
+
+//? Object Literals
+// const BaoYen = {
+//   name: 'BaoYen',
+//   workingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+// };
+
+//? ES6 Enhanced Object Literals
+//* just declare a simple Obj
+let workingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+const myLove = [`the one i love`, `codename angle`, 'theOnlyLove'];
+const BaoYen = {
+  [myLove[2]]: 'BaoYen', //** Add property's name in Obj "BaoYen" by "ES6 Enhanced Object Literals"
+  workingHours, // ** Add property in Obj "BaoYen" by "ES6 Enhanced Object Literals"
+  // **  Adding method "loveMe" by "ES6 Enhanced Object Literals"
+  loveMe() {
+    console.log(`Dat, I love you`);
+  },
+};
+console.log(BaoYen);
+BaoYen.loveMe();
