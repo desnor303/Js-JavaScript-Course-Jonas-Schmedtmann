@@ -246,7 +246,7 @@ console.log(rest1, rest2);
 
 //////////////////////////////////////
 
-//todo Coding Challenge #1
+//todo Coding Challenge
 
 /* 
 We're building a football betting app (soccer for my American friends 😅)!
@@ -306,6 +306,10 @@ const game = {
     team2: 6.5,
   },
 };
+
+//! Coding Challenge #1
+/*
+
 // 1.
 const [players1, players2] = game.players;
 // 2.
@@ -331,6 +335,13 @@ let printGoals = (...player) => {
 printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 printGoals(...game.scored);
 // 7.
-
 team1 < team2 && console.log('team 1 win');
 team2 < team1 && console.log('team 2 win');
+*/
+
+//todo Looping Arrays: The for-of Loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (let item of menu) console.log(`this ${item} is very delicious`);
+console.log(...menu.entries());
+for (let [index, ele] of menu.entries()) console.log(`${index + 1}: ${ele}`);
