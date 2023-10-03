@@ -179,13 +179,26 @@ console.log(third);
 console.log(others);
 */
 //? Rest operator for Object
+/*
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat);
 console.log(weekdays);
-// 2) Function
+*/
+//* param */ 2) Function
+/*
 const sum = function (...numbers) {
   return numbers.reduce((a, b) => a + b, 0);
 };
 let arr1 = [1, 3, 5];
 console.log(sum(2, 4));
 console.log(sum(...arr1));
+*/
+//todo Nullish Coalescing Operator
+
+let input;
+let caution = function () {
+  return console.log(`He has gain ${input}`);
+};
+caution();
+input = 'fail';
+caution();
