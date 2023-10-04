@@ -237,12 +237,12 @@ rest2.numGuest ??= 10;
 console.log(rest1, rest2);
 */
 
-//? Nullish assignment operators" (null or undefined) Giá trị mặc đinh được kích hoạt khi g trị ban đầu là (null or undefined)
+//? Nullish assignment operators" (null or undefined) Giá trị mặc đinh được kích hoạt khi g trị ban đầu là truthy
 /*
 rest1.owner &&= 'anonymous';
 rest2.owner &&= 'anonymous';
 console.log(rest1, rest2);
-*/
+ */
 
 //////////////////////////////////////
 
@@ -265,7 +265,7 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 
 GOOD LUCK 😀
 */
-
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -306,7 +306,7 @@ const game = {
     team2: 6.5,
   },
 };
-
+*/
 //! Coding Challenge #1
 /*
 
@@ -350,6 +350,7 @@ for (let [index, ele] of menu.entries()) console.log(`${index + 1}: ${ele}`);
 
 //todo ES6 Enhanced Object Literals
 
+/*
 //? Object Literals
 // const BaoYen = {
 //   name: 'BaoYen',
@@ -396,3 +397,22 @@ const BaoYen = {
 };
 console.log(BaoYen);
 BaoYen.loveMe();
+
+*/
+
+//todo Optional chaining
+
+/* */
+//? Method
+console.log(restaurant.order(1, 0));
+console.log(restaurant.order?.(1, 0) ?? 'Command not found');
+console.log(restaurant.orderrrrr?.(1, 0) ?? 'Command not found');
+
+//? Obj
+
+let arr = [
+  {
+    name: 'dat',
+  },
+];
+console.log(arr[0]?.name ?? 'this arr is empty');
