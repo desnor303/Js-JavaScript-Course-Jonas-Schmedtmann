@@ -340,13 +340,10 @@ team2 < team1 && console.log('team 2 win');
 */
 
 //todo Looping Arrays: The for-of Loop
-
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 for (let item of menu) console.log(`this ${item} is very delicious`);
-console.log(...menu.entries());
-
 for (let [index, ele] of menu.entries()) console.log(`${index + 1}: ${ele}`);
 */
 
@@ -354,23 +351,23 @@ for (let [index, ele] of menu.entries()) console.log(`${index + 1}: ${ele}`);
 
 /*
 //? Object Literals
-// const BaoYen = {
-//   name: 'BaoYen',
-//   workingHours: {
-//     thu: {
-//       open: 12,
-//       close: 22,
-//     },
-//     fri: {
-//       open: 11,
-//       close: 23,
-//     },
-//     sat: {
-//       open: 0, // Open 24 hours
-//       close: 24,
-//     },
-//   },
-// };
+const BaoYen = {
+  name: 'BaoYen',
+  workingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+};
 
 //? ES6 Enhanced Object Literals
 //* just declare a simple Obj
@@ -443,7 +440,8 @@ BONUS: Create an object called 'scorers' which contains the names of the players
 
 GOOD LUCK 😀
 */
-
+//! Answer Coding Challenge #2
+/* 
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -505,3 +503,59 @@ game.constgetAverage(...oddsValues);
 // 3.
 
 game.printOdds(Object.entries(game.odds));
+
+*/
+
+//Todo "SETS" {...}
+//*Basic
+//? Declare variable Set type
+
+let orderSet = new Set(['Pizza', 'Bread', 'Pasta', 'Pizza', 'Pizza', 'Bread']);
+// console.log(orderSet);
+
+//? turn set to arr
+/*
+const orderSetArr = [...orderSet];
+console.log(orderSetArr);
+*/
+
+//* some type of "Set" 's Method
+
+/*
+//? .size , just like .length of Arr.
+console.log(orderSet.size); //log: 3;
+
+//? .has, check (ele) is avalable in SETS {...}, Boolean output
+
+console.log(orderSet.has('orange')); //output: false
+console.log(orderSet.has('Pizza')); //output: true
+
+//? .add, just add a UNIQUE in SETS {...} otherwise, nothing happen
+
+orderSet.add('Pizza'); //output: {'Pizza', 'Bread', 'Pasta'}, not have any new ele
+console.log(orderSet);
+
+orderSet.add('Rorsta'); //output: {'Pizza', 'Bread', 'Pasta', 'Rorsta'}, new ele  'Rorsta' has been add to orderSet Set
+console.log(orderSet);
+//? .delete, just delete a ele in SETS {...} otherwise, nothing happen
+
+orderSet.delete('Pizza');
+console.log(orderSet);
+*/
+//* Loop "for( ... of ...) "
+for (let ele of orderSet) console.log(ele);
+
+//* Example
+const staff = [
+  'Waiter',
+  'Chef',
+  'Boss',
+  'Manager',
+  'Waiter',
+  'Waiter',
+  'Waiter',
+  'Chef',
+];
+
+const unistaff = [...new Set(staff)];
+console.log(unistaff);
