@@ -565,8 +565,19 @@ console.log(unistaff);
 
 // Todo "Maps" {...}
 //*Basic
-
-const picnicBags = new Map();
+// Method #1 to create a Map obj
+const picnicBags = new Map(); // then just .set to add more prototype in it
+//methodd #2 to create a Map objt
+const question = new Map([
+  ['ques1', 'what is the most popular Programing Language in the world'],
+  ['ques2', 'why are you so pretty'],
+  [1, 'Javascript'],
+  [2, 'Java'],
+  [3, 'Python'],
+  [true, 'correct'],
+  [false, "Let's try again"],
+]);
+console.log(question);
 //? set Method
 /*
 picnicBags.set('write', 'pencil');
@@ -590,3 +601,23 @@ picnicBags
 console.log(picnicBags.get(miniBags));
 console.log(picnicBags.get(['ele3', 'ele4'])); // Because the arr ['ele3', 'ele4'] in 'set' and "get" is different in heap potition memory
 */
+
+//* Convert Obj to Map
+//? Example
+/*
+const mapOpenHour = new Map(Object.entries(restaurant.openingHours));
+console.log(mapOpenHour);
+*/
+//* Loop
+//? Example
+/*
+const answer = Number(prompt('What is you decision'));
+console.log(`Your answer is ${question.get(answer)}`);
+//*my Ways
+// for (let [key, value] of question)
+//   if (typeof key === 'number' && key === answer)
+//     console.log(`Answer ${key}: ${value}`);
+*/
+//*  Convert Map to Arr
+const questionArr = [...question];
+console.log(questionArr.length); // .length is arr method, not Map Method
