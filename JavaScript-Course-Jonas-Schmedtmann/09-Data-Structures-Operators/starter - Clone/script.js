@@ -510,7 +510,7 @@ game.printOdds(Object.entries(game.odds));
 //*Basic
 //? Declare variable Set type
 
-let orderSet = new Set(['Pizza', 'Bread', 'Pasta', 'Pizza', 'Pizza', 'Bread']);
+// let orderSet = new Set(['Pizza', 'Bread', 'Pasta', 'Pizza', 'Pizza', 'Bread']);
 // console.log(orderSet);
 
 //? turn set to arr
@@ -543,9 +543,10 @@ orderSet.delete('Pizza');
 console.log(orderSet);
 */
 //* Loop "for( ... of ...) "
-for (let ele of orderSet) console.log(ele);
+// for (let ele of orderSet) console.log(ele);
 
 //* Example
+/*
 const staff = [
   'Waiter',
   'Chef',
@@ -559,3 +560,33 @@ const staff = [
 
 const unistaff = [...new Set(staff)];
 console.log(unistaff);
+
+*/
+
+// Todo "Maps" {...}
+//*Basic
+
+const picnicBags = new Map();
+//? set Method
+/*
+picnicBags.set('write', 'pencil');
+picnicBags
+  .set('girlfriend', 'BaoYen')
+  .set(true, 'Make love')
+  .set(false, 'Pervert!!');
+console.log(picnicBags);
+*/
+//? get  Method
+/* 
+console.log(picnicBags.get('protection'));
+console.log(picnicBags.get(false));
+*/
+//! caution with Array 'Keys' to .get
+let miniBags = ['ele1', 'ele2'];
+/* 
+picnicBags
+  .set(miniBags, `BaoYen \'stuff`)
+  .set(['ele3', 'ele4'], `Datha \'stuff`);
+console.log(picnicBags.get(miniBags));
+console.log(picnicBags.get(['ele3', 'ele4'])); // Because the arr ['ele3', 'ele4'] in 'set' and "get" is different in heap potition memory
+*/
