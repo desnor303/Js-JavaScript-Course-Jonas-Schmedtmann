@@ -704,6 +704,7 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
+/*
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
@@ -724,3 +725,22 @@ document.querySelector('button').addEventListener('click', function () {
   }
   camelCase(text);
 });
+
+*/
+//todo the Last challenge
+/*
+
+const rows = flights.split('+_');
+console.log(rows);
+
+for (let row of rows) {
+  let [event, from, to, time] = row.split(';');
+  event = event.includes('_') ? event.replace(/_/g, ' ').trim() : event;
+  event = event.startsWith('Delayed') ? `🔴 ${event}` : event;
+  let input = `${event} from ${from.slice(0, 3).toUpperCase()} to ${to
+    .slice(0, 3)
+    .toUpperCase()} (${time})`.padStart(45);
+  console.log(input);
+}
+
+*/
