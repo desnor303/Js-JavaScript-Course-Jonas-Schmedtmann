@@ -70,8 +70,8 @@ tranformer('hello World', firstUpper);
 const greating = greating => name => console.log(`${greating}, ${name}`);
 greating('Hi')('BaoYen');
 */
-//Todo  The call and apply Methods
-/*
+//Todo  The call, the apply and the bind Methods
+
 const vietjet = {
   airline: 'vietjet',
   IATAcode: 'VJ',
@@ -117,4 +117,46 @@ book.apply(bambo, _datha22_07);
 //book.call(bambo, ..._datha22_07); //in modern Js, use can replace apply to call() by using spread Op
 console.log(bambo);
 
-*/
+//? The bind Method
+const Vn_air = {
+  airline: 'Vn_air',
+  IATAcode: 'HVN',
+  booking: [],
+};
+const bookVn_air = book.bind(Vn_air);
+bookVn_air(347, 'PhucHIeu');
+console.log(Vn_air);
+
+//! the plus of using bind() method more then call()
+const bookVn_air_981 = book.bind(Vn_air, 981);
+bookVn_air_981('Tuan');
+bookVn_air_981('Nam');
+
+//? Event listener practice using bind Method
+Vn_air.planes = 1000;
+Vn_air.newPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+//!this keyword really is set dynamically.
+// case 1:
+Vn_air.newPlane(); // in this, you can buy a plant !
+// case 2:
+document.querySelector('.buy').addEventListener('click', Vn_air.newPlane); //in this, you can  not buy a plant ( just try to "click"! )
+// case 2 plus bind:
+document
+  .querySelector('.buy')
+  .addEventListener('click', Vn_air.newPlane.bind(Vn_air)); //in this, you can  not buy a plant ( just try to "click"! )
+//?Parital Application
+
+const addTax = (rate, value) => value + rate * value;
+console.log(addTax(0.2, 230));
+
+// const addVAT = value => value + value*0,1;
+const addVAT = addTax.bind(null, 0.1); // same as above
+console.log(addVAT(100));
+
+//Challenge by not using bind
+const addVAT2 = value => addTax(0.1, value);
+console.log(addVAT2(100));
