@@ -148,7 +148,8 @@ document.querySelector('.buy').addEventListener('click', Vn_air.newPlane); //in 
 document
   .querySelector('.buy')
   .addEventListener('click', Vn_air.newPlane.bind(Vn_air)); //in this, you can  not buy a plant ( just try to "click"! )
-//?Parital Application
+
+//todo Parital Application
 
 const addTax = (rate, value) => value + rate * value;
 console.log(addTax(0.2, 230));
