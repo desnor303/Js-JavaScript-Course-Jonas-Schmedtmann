@@ -20,7 +20,6 @@ creatBooking('b123', undefined, 200);
 console.log(bookings);
 
 */
-
 //todo How Passing Arguments Works: Value vs. Reference
 /* 
 
@@ -51,9 +50,8 @@ cho các đối tượng và mảng. Khi bạn truyền một đối tượng ho
  đến đối tượng hoặc mảng gốc bên ngoài hàm.
 
  */
-
 //todo: Functions Accepting Callback Functions
-
+/*
 function tranformer(str, fn) {
   console.log(`The original string: ${str}`);
   console.log(`The Function is used: ${fn.name}()`);
@@ -66,3 +64,7 @@ function firstUpper(str) {
 }
 
 tranformer('hello World', firstUpper);
+*/
+//todo: Functions Returning Functions
+const greating = greating => name => console.log(`${greating}, ${name}`);
+greating('Hi')('BaoYen');
