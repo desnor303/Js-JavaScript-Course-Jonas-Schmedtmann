@@ -66,5 +66,55 @@ function firstUpper(str) {
 tranformer('hello World', firstUpper);
 */
 //todo: Functions Returning Functions
+/*
 const greating = greating => name => console.log(`${greating}, ${name}`);
 greating('Hi')('BaoYen');
+*/
+//Todo  The call and apply Methods
+/*
+const vietjet = {
+  airline: 'vietjet',
+  IATAcode: 'VJ',
+  booking: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked seat on ${this.airline} flight ${
+        this.IATAcode + flightNum
+      }`
+    );
+    this.booking.push({
+      flight: this.IATAcode + flightNum,
+      name,
+    });
+  },
+};
+
+vietjet.book(237, 'BaoYEn');
+console.log(vietjet);
+
+const bambo = {
+  airline: 'bambo',
+  IATAcode: 'BB',
+  booking: [],
+};
+
+const book = vietjet.book;
+
+// ! does not work !
+// book(248, 'DatHa');
+//? function method "call"
+
+book.call(bambo, 248, 'DatHa');
+console.log(bambo);
+
+book.call(vietjet, 118, 'DongDuc');
+console.log(vietjet);
+
+//? function method "apply" ( same as call() above) (no used in modern Js anymore)
+
+const _datha22_07 = [248, 'DatHa'];
+book.apply(bambo, _datha22_07);
+//book.call(bambo, ..._datha22_07); //in modern Js, use can replace apply to call() by using spread Op
+console.log(bambo);
+
+*/
