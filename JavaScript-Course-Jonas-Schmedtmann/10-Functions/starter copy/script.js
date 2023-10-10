@@ -22,7 +22,8 @@ console.log(bookings);
 */
 
 //todo How Passing Arguments Works: Value vs. Reference
-/* */
+/* 
+
 const flight = 'MK937';
 const Datha = {
   name: 'DatHa',
@@ -42,9 +43,26 @@ console.log(Datha);
 let Passenger = Datha;
 Passenger.name = 'BaoYen';
 
-// "Truyền theo tham chiếu" (Pass by Reference-like) áp dụng
-// cho các đối tượng và mảng. Khi bạn truyền một đối tượng hoặc
-//  mảng vào một hàm, bạn đang truyền một tham chiếu đến đối
-//  tượng hoặc mảng đó. Tham chiếu này cho phép bạn thay đổi
-//  trạng thái của đối tượng hoặc mảng bên trong hàm và ảnh hưởng
-//  đến đối tượng hoặc mảng gốc bên ngoài hàm.
+"Truyền theo tham chiếu" (Pass by Reference-like) áp dụng
+cho các đối tượng và mảng. Khi bạn truyền một đối tượng hoặc
+ mảng vào một hàm, bạn đang truyền một tham chiếu đến đối
+ tượng hoặc mảng đó. Tham chiếu này cho phép bạn thay đổi
+ trạng thái của đối tượng hoặc mảng bên trong hàm và ảnh hưởng
+ đến đối tượng hoặc mảng gốc bên ngoài hàm.
+
+ */
+
+//todo: Functions Accepting Callback Functions
+
+function tranformer(str, fn) {
+  console.log(`The original string: ${str}`);
+  console.log(`The Function is used: ${fn.name}()`);
+  console.log(`The tranformed string: ${fn(str)}`);
+}
+
+function firstUpper(str) {
+  let [first, ...other] = str.split(' ');
+  return [first.toUpperCase(), ...other].join(' ');
+}
+
+tranformer('hello World', firstUpper);
