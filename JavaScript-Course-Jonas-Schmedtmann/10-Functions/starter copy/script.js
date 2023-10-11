@@ -228,8 +228,11 @@ poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 */
 
 //todo: Closure
+
+/* //basic
 const secureBook = () => {
   let passengerCount = 0;
+
   return function () {
     passengerCount++;
     console.log(passengerCount);
@@ -240,3 +243,42 @@ const booker = secureBook();
 booker(); //output: 1
 booker(); //output: 2
 booker(); //output: 3
+*/
+//? example 1:
+/*
+let a;
+let b = function () {
+  let target1 = 100;
+  a = () => {
+    console.log(target1 * 2);
+  };
+};
+
+let c = function () {
+  let target2 = 150;
+  a = () => {
+    console.log(target2 * 2);
+  };
+};
+
+b();
+a();
+console.dir(a);
+// re-assign function a ()
+c();
+a();
+console.dir(a); // after re-assign, Closure variable chance
+*/
+//? example 2:
+const boardPassenger = (num, time) => {
+  // let group = num / 3;
+  setTimeout(() => {
+    console.log(
+      `${num} passenger have onboard, each group has ${group} passenger`
+    );
+  }, time);
+  console.log(`${num} passenger're waiting onboard in ${time}`);
+};
+let group = 600;
+
+boardPassenger(1200, 3000);
