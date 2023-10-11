@@ -226,3 +226,17 @@ document
 poll.displayResults.call({ answers: [5, 2, 3] }, 'array');
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 */
+
+//todo: Closure
+const secureBook = () => {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(passengerCount);
+  };
+};
+
+const booker = secureBook();
+booker(); //output: 1
+booker(); //output: 2
+booker(); //output: 3
