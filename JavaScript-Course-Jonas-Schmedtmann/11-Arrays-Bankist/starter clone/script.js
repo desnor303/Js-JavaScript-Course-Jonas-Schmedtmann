@@ -94,6 +94,18 @@ const creatUserNames = function (accts) {
 };
 creatUserNames(accounts);
 
+//? use reduce to accumulator "Current Balance"
+
+const displayBalance = function (account) {
+  const balance = account.movements.reduce(function (acc, cur, index, arr) {
+    return acc + cur;
+  }, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+displayBalance(account1);
+// maximum vaulue
+const max = movements.redcue;
+console.log(balance);
 // document.
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
