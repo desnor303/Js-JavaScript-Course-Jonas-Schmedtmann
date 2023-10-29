@@ -103,8 +103,6 @@ const displayBalance = function (account) {
   labelBalance.textContent = `${balance}€`;
 };
 displayBalance(account1);
-// maximum vaulue
-const max = movements.redcue;
 console.log(balance);
 // document.
 /////////////////////////////////////////////////
