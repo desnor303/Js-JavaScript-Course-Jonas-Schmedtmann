@@ -62,22 +62,38 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 // application
+
+//? Creating DOM Elements
 const displayMovements = function (movements) {
-  containerMovements.innerHTML = ``;
-  movements.forEach(function (mov, i) {
-    const type = mov > 0 ? `deposit` : `withdrawal`;
+  containerMovements.innerHTML = '';
+  movements.forEach(function (mov, index) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">
-        ${i + 1} ${type}</div>
+        ${index + 1} ${type}</div>
         <div class="movements__value">${mov}€</div>
       </div>
     `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-
 displayMovements(account1.movements);
+
+// computing username
+const account1test = 'Ha Tien Dat';
+const creatUserNames = function (accts) {
+  accts.forEach(function (acct) {
+    acct.username = acct.owner
+      .toLowerCase()
+      .split(' ')
+      .map(ele => ele[0])
+      .join('');
+    console.log(acct);
+  });
+};
+creatUserNames(accounts);
+
 // document.
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -112,7 +128,7 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
-
+/*
 function checkDogs(JuliaDt, KateDt) {
   // 1.
   let dogsJulia = JuliaDt.slice(1, JuliaDt.length - 1);
@@ -130,3 +146,4 @@ function checkDogs(JuliaDt, KateDt) {
 }
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+*/
