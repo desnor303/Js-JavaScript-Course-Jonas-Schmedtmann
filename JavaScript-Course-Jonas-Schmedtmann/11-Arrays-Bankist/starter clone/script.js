@@ -103,6 +103,7 @@ const displayBalance = function (account) {
   labelBalance.textContent = `${balance}€`;
 };
 displayBalance(account1);
+
 // document.
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -115,6 +116,27 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+const totalDepositUsd = movements
+  .filter(cur => cur > 0)
+  .map(cur => cur * eurToUsd)
+  .reduce((acc, cur) => acc + cur, 0);
+console.log(totalDepositUsd);
+
+const calDisplaySumary = function (movements) {
+  const incom = movements
+    .filter(cur => cur > 0)
+    .reduce((acc, cur) => acc + cur, 0);
+  labelSumIn.textContent = `${incom}€`;
+  labelSumInterest.textContent = `${(incom * 1.2) / 100}€`;
+
+  const out = movements
+    .filter(cur => cur < 0)
+    .reduce((acc, cur) => acc + cur, 0);
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+};
+calDisplaySumary(movements);
 
 /////////////////////////////////////////////////
 
