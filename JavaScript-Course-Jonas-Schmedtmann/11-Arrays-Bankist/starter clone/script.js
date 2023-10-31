@@ -117,6 +117,8 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+//?The Magic of Chaining Methods
+/*
 const eurToUsd = 1.1;
 const totalDepositUsd = movements
   .filter(cur => cur > 0)
@@ -137,7 +139,7 @@ const calDisplaySumary = function (movements) {
   labelSumOut.textContent = `${Math.abs(out)}€`;
 };
 calDisplaySumary(movements);
-
+*/
 /////////////////////////////////////////////////
 
 // Coding Challenge #1
@@ -196,6 +198,7 @@ TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
 */
+
 /*
 const calcAverageHumanAge = function (ages) {
   ages = ages
@@ -210,4 +213,24 @@ const calcAverageHumanAge = function (ages) {
 
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+*/
+
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, index, arr) => acc + age / arr.length, 0);
+
+calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+console.log(calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]));
+
+// Coding Challenge #3
+
+/* 
+Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as an arrow function, and using chaining!
+
+TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
+TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
 */
